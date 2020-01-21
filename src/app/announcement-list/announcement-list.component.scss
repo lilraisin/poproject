@@ -1,26 +1,10 @@
-ul.list-group>li.list-group-item {
-    padding: 3px;
-    cursor: pointer;
-    &:hover {
-        background: #daeaf877;
-    }
+ul.list-group > li.list-group-item {
+  cursor: pointer;
+  &:hover {
+    background: #daeaf877;
+  }
 }
 
-.announcement {
-    height: 150px;
-    padding: 0px;
-}
-
-.img0 {
-    height: 150px;
-    width: 225px;
-}
-
-.sp0 {
-    border: 3px solid black;
-}
-
-.sp1 {
-    width: 100%;
-    padding-left: 10px;
+img {
+  border: 3px solid black;
 }
