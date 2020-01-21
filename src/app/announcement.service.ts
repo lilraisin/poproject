@@ -14,6 +14,7 @@ export class AnnouncementService {
   }
 
   public getAnnouncement(id: number): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id);
+    return this.http.get('http://localhost/poproject/announcements.php',
+      { params: { func: 'getAnnouncements', announcement_id: id.toString() } });
   }
 }
