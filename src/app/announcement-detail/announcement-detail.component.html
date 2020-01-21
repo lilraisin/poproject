@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" routerLink="/list">
+            Powrót do listy
+        </div>
+    </div>
+    <div class="row" *ngIf="this.announcement">
+        <div class="col-12">
+            <div>Announcement id: {{ this.announcement.id }} </div>
+            <div>Announcement author: {{ this.announcement.userId }} </div>
+            <div>Announcement title: {{ this.announcement.title }} </div>
+            <div>Announcement body: {{ this.announcement.body }}</div>
+            <button (click)="test()" class="btn btn-outline-success">Zarezerwuj</button>
+        </div>
+    </div>
+</div>

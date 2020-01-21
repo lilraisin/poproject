@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-12">
+        <ul *ngIf="this.announcements != undefined" class="list-group">
+            <li *ngFor="let announcement of this.announcements" [routerLink]="'/detail/' + announcement.NrOgloszenia" class="list-group-item">
+                <div class="announcement">
+                    <span class="sp0 float-left">
+                        <img [src]="'http://localhost/poproject/img/apart'+ announcement.NrLokalu +'.jpg'" class="img-fluid img0" alt="Non responsive image" />
+                    </span>
+                    <span class="sp1">
+                        <p>{{ announcement.Tytul }}</p>
+                    </span>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
