@@ -1,46 +1,42 @@
 <div class="container-fluid">
-  <div class="row mb-3">
-    <div class="col-6 back" routerLink="/list">
-      Powrót do listy
+    <div class="row mb-3">
+        <div class="col-6 back" routerLink="/list">
+            Powrót do listy
+        </div>
     </div>
-  </div>
-  <small class="text-muted">ogłoszenie nr: {{ this.announcement.NrOgloszenia }}</small> <br>
-  <div class="row" *ngIf="this.announcement">
-    <div class="col-12">
-      <div class="row">
-        <div class="col-md-4">
-          <img [src]="'http://localhost/poproject/img/apart'+ announcement.NrLokalu +'.jpg'" class="img-fluid"
-            alt="Responsive image" />
+    <small class="text-muted">ogłoszenie nr: {{ announcement.NrOgloszenia }}</small> <br>
+    <div class="row" *ngIf="this.announcement">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <img [src]="'http://localhost/poproject/img/apart'+ announcement.NrLokalu +'.jpg'" class="img-fluid" alt="Responsive image" />
+                </div>
+                <div class="col-md-4">
+                    <h4><strong>Adres:</strong> {{announcement.miasto}} {{announcement.nazwaUlicy}} {{announcement.nrUlicy}}/{{announcement.nrMieszkania}}
+                    </h4>
+                    <h4><strong>Standard:</strong> {{ announcement.StandardMieszkaniowy }}</h4>
+                    <h4><strong>Pokoje:</strong> {{ announcement.IloscPokoi }}</h4>
+                    <h4><strong>Miejsc:</strong> {{ announcement.MaxMiejsc }}</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>
+                        <strong>Wystawiono:</strong> {{ announcement.DataWystawienia }}
+                    </h4>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <h4><strong>Opłata:</strong> {{announcement.Oplata}} zł
+                    </h4>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-6">
+                    <h4><strong>Opis:</strong> {{announcement.Opis}}
+                    </h4>
+                </div>
+            </div>
+            <button class="btn btn-outline-success">Zarezerwuj</button>
         </div>
-        <div class="col-md-4">
-          <h4><strong>Adres:</strong>
-            {{announcement.miasto}} {{announcement.nazwaUlicy}} {{announcement.nrUlicy}}/{{announcement.nrMieszkania}}
-          </h4>
-          <h4><strong>Standard:</strong> {{ announcement.StandardMieszkaniowy }}</h4>
-          <h4><strong>Pokoje:</strong> {{ announcement.IloscPokoi }}</h4>
-          <h4><strong>Miejsc:</strong> {{ announcement.MaxMiejsc }}</h4>
-        </div>
-        <div class="col-md-4">
-          <h4>
-            <strong>Wystawiono:</strong> {{ announcement.DataWystawienia }}
-          </h4>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-6">
-          <h4><strong>Opłata:</strong>
-            {{announcement.Oplata}} zł
-          </h4>
-        </div>
-      </div>
-      <div class="row mt-1">
-        <div class="col-6">
-          <h4><strong>Opis:</strong>
-            {{announcement.Opis}}
-          </h4>
-        </div>
-      </div>
-      <button class="btn btn-outline-success">Zarezerwuj</button>
     </div>
-  </div>
 </div>

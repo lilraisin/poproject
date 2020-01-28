@@ -10,6 +10,10 @@ import { AnnouncementListComponent } from './announcement-list/announcement-list
 import { TopbarComponent } from './topbar/topbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OwnerApartmentListComponent } from './owner-apartment-list/owner-apartment-list.component';
+import { OwnerApartmentDetailComponent } from './owner-apartment-detail/owner-apartment-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     AnnouncementListComponent,
     TopbarComponent,
     SidebarComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    PopUpComponent,
+    OwnerApartmentListComponent,
+    OwnerApartmentDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

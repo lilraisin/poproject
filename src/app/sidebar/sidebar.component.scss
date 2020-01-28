@@ -4,9 +4,18 @@
     width: 180px;
     padding-left: 0.5%;
     height: 100%;
-    vertical-align: top;
+}
+
+.align-top {
+    height: 100%;
+    width: 100%;
 }
 
 .navbar-fixed-left {
     position: fixed;
+}
+
+.btn {
+    width: 100%;
+    border: solid black 2px;
 }
