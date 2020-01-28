@@ -14,6 +14,12 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OwnerApartmentListComponent } from './owner-apartment-list/owner-apartment-list.component';
 import { OwnerApartmentDetailComponent } from './owner-apartment-detail/owner-apartment-detail.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { FormsModule } from '@angular/forms';
+
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { plLocale } from 'ngx-bootstrap/locale';
+defineLocale('pl', plLocale);
 
 @NgModule({
   declarations: [
@@ -32,9 +38,13 @@ import { OwnerApartmentDetailComponent } from './owner-apartment-detail/owner-ap
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    FormsModule,
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot()
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopUpComponent]
 })
 export class AppModule { }

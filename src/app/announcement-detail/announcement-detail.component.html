@@ -4,8 +4,8 @@
             Powrót do listy
         </div>
     </div>
-    <small class="text-muted">ogłoszenie nr: {{ announcement.NrOgloszenia }}</small> <br>
     <div class="row" *ngIf="this.announcement">
+      <small class="text-muted">ogłoszenie nr: {{ announcement.NrOgloszenia }}</small> <br>
         <div class="col-12">
             <div class="row">
                 <div class="col-md-4">
@@ -36,7 +36,7 @@
                     </h4>
                 </div>
             </div>
-            <button class="btn btn-outline-success">Zarezerwuj</button>
+            <button class="btn btn-outline-success" (click)="openReservationModal()">Zarezerwuj</button>
         </div>
     </div>
 </div>
