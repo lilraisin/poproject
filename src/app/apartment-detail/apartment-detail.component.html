@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row mb-3">
+    <div class="col-6 back" routerLink="/apartmentList">
+      Powrót do listy
+    </div>
+  </div>
+  <div class="row" *ngIf="this.apartment">
+    <div class="col-12">
+      <small class="text-muted">lokal nr: {{ apartment.NrLokalu }}</small> <br>
+      <div class="row">
+        <div class="col-md-4">
+          <img [src]="'http://localhost/poproject/img/apart'+ apartment.NrLokalu +'.jpg'" class="img-fluid"
+            alt="Responsive image" />
+        </div>
+        <div class="col-md-8">
+          <h4><strong>Adres:</strong> {{apartment.miasto}}, {{apartment.nazwaUlicy}}
+            {{apartment.nrUlicy}}/{{apartment.nrMieszkania}}
+          </h4>
+          <h4><strong>Standard:</strong> {{ apartment.StandardMieszkaniowy }}</h4>
+          <h4><strong>Pokoje:</strong> {{ apartment.IloscPokoi }}</h4>
+          <h4><strong>Wolnych miejsc:</strong>
+            {{ apartment.MaxMiejsc - (apartment?.CzyZawieszone === 1 ? apartment?.LiczbaMiejsc : 0 ) }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

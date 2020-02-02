@@ -13,4 +13,9 @@ export class ApartmentService {
     return this.http.get('http://localhost/poproject/apartments.php',
       { params: { func: 'getApartmentsOf', owner_login: login } });
   }
+
+  public getApartment(id: string): Observable<any> {
+    return this.http.get('http://localhost/poproject/apartments.php',
+      { params: { func: 'getApartment', apartment_id: id } });
+  }
 }

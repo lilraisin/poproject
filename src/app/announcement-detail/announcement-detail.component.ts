@@ -31,15 +31,7 @@ export class AnnouncementDetailComponent implements OnInit {
   }
 
   openReservationModal() {
-    const initialState = {
-      list: [
-        'Open a modal with component',
-        'Pass your data',
-        'Do something else',
-        '...'
-      ],
-    };
-    this.bsModalRef = this.modalService.show(PopUpComponent, { initialState });
+    this.bsModalRef = this.modalService.show(PopUpComponent);
   }
 
 }

@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { plLocale } from 'ngx-bootstrap/locale';
+import { ApartmentDetailComponent } from './apartment-detail/apartment-detail.component';
 defineLocale('pl', plLocale);
 
 @NgModule({
@@ -31,7 +32,8 @@ defineLocale('pl', plLocale);
     SearchbarComponent,
     PopUpComponent,
     OwnerApartmentListComponent,
-    OwnerApartmentDetailComponent
+    OwnerApartmentDetailComponent,
+    ApartmentDetailComponent
   ],
   imports: [
     BrowserModule,
