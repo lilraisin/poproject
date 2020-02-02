@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { AnnouncementService } from '../announcement.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'po-pop-up',
@@ -15,7 +16,8 @@ export class PopUpComponent implements OnInit {
   constructor(
     public bsModalRef: BsModalRef,
     private localeService: BsLocaleService,
-    private service: AnnouncementService
+    private service: AnnouncementService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -28,8 +30,8 @@ export class PopUpComponent implements OnInit {
       notka: this.comment,
       termin: this.date.toISOString().split('T')[0]
     }).subscribe(response => {
-      console.log(response);
       this.bsModalRef.hide();
+      this.router.navigate(['/list']);
     });
   }
 }

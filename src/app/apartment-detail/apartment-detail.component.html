@@ -19,7 +19,7 @@
           <h4><strong>Standard:</strong> {{ apartment.StandardMieszkaniowy }}</h4>
           <h4><strong>Pokoje:</strong> {{ apartment.IloscPokoi }}</h4>
           <h4><strong>Wolnych miejsc:</strong>
-            {{ apartment.MaxMiejsc - (apartment?.CzyZawieszone === 1 ? apartment?.LiczbaMiejsc : 0 ) }}</h4>
+            {{ apartment.MaxMiejsc - (apartment?.CzyZawieszone === '1' ? apartment?.LiczbaMiejsc : 0 ) }}</h4>
         </div>
       </div>
     </div>
