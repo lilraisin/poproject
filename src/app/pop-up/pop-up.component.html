@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">Wybierz dane rezerwacji</h4>
+<h4 class="modal-title pull-left">Wybierz dane rezerwacji</h4>
   <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -15,7 +15,7 @@
       <input class="form-control" type="text" [(ngModel)]="this.comment" placeholder="Komentarz">
     </div>
     <div class="col-md-8 offset-md-2 form-group">
-      <button type="button" class="btn btn-success" [disabled]="this.comment === ''"  (click)="reserve()">Rezerwuj</button>
+      <button type="button" class="btn btn-success" (click)="reserve()">Rezerwuj</button>
     </div>
   </div>
   <div class="modal-footer">

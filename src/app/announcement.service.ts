@@ -19,8 +19,14 @@ export class AnnouncementService {
       { params: { func: 'getAnnouncements', announcement_id: id.toString() } });
   }
 
-  public getApartmentsOf(login: string): Observable<any> {
-    return this.http.get('http://localhost/poproject/announcements.php',
-      { params: { func: 'getApartmentsOf', owner_login: login } });
+  public reserve(announcement): Observable<any> {
+    return this.http.post('http://localhost/poproject/announcements.php',
+      {
+        func: 'reserve',
+        announcement_id: announcement.id,
+        termin: announcement.termin,
+        notka: announcement.notka
+      });
   }
+
 }

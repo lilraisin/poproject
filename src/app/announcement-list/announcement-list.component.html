@@ -1,17 +1,22 @@
 <div class="row">
-    <div class="col-12 pr-0">
-        <ul *ngIf="this.announcements != undefined" class="list-group">
-            <li *ngFor="let announcement of this.announcements" [routerLink]="'/detail/' + announcement.NrOgloszenia" class="list-group-item">
-                <div class="row announcement">
-                    <div class="col-md-3">
-                        <img [src]="'http://localhost/poproject/img/apart'+ announcement.NrLokalu +'.jpg'" class="img-fluid" alt="Responsive image" />
-                    </div>
-                    <div class="col-md-9">
-                        <h5 class="mt-4"><strong>{{ announcement.Tytul }}</strong></h5>
-                        <p>{{ announcement.Opis }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="col-12 pr-0">
+    <ul *ngIf="this.announcements != undefined" class="list-group">
+      <li *ngFor="let announcement of this.announcements"
+        class="list-group-item">
+        <div class="row announcement" [routerLink]="'/detail/' + announcement.NrOgloszenia" *ngIf="announcement.CzyZawieszone !== '1'; else nieaktualne">
+          <div class="col-md-3">
+            <img [src]="'http://localhost/poproject/img/apart'+ announcement.NrLokalu +'.jpg'" class="img-fluid"
+              alt="Responsive image" />
+          </div>
+          <div class="col-md-9">
+            <h5 class="mt-4"><strong>{{ announcement.Tytul }}</strong></h5>
+            <p>{{ announcement.Opis }}</p>
+          </div>
+        </div>
+        <ng-template #nieaktualne>
+          Ogłoszenie zawieszone
+        </ng-template>
+      </li>
+    </ul>
+  </div>
 </div>

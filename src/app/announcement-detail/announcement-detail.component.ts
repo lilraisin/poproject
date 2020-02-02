@@ -31,7 +31,8 @@ export class AnnouncementDetailComponent implements OnInit {
   }
 
   openReservationModal() {
-    this.bsModalRef = this.modalService.show(PopUpComponent);
+    const initialState = { id: this.id };
+    this.bsModalRef = this.modalService.show(PopUpComponent, { initialState });
   }
 
 }
