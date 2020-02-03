@@ -53,6 +53,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         echo json_encode($response);
     }
+	  // GET APARTMENT
+	  if ($func_name === 'getApartment') {
+		$id = isset($_GET['apartment_id']) ? $_GET['apartment_id'] : null;
+		if (!($result = mysqli_query(
+		  $database,
+		  "SELECT l.NrLokalu,
+				  l.Adres,
+				  l.StandardMieszkaniowy,
+				  l.CzyZamieszkaly,
+				  l.IloscPokoi,
+				  l.MaxMiejsc,
+				  l.UZYTKOWNIKID,
+				  a.nrMieszkania,
+				  a.nrUlicy,
+				  a.nazwaUlicy,
+				  a.miasto,
+				  o.CzyZawieszone,
+				  SUM( o.LiczbaMiejsc ) AS LiczbaMiejsc
+			 FROM lokal l
+				  LEFT JOIN ogłoszenie o ON (l.NrLokalu = o.LOKALID)
+				  JOIN adres a ON (l.Adres = a.idAdresu)
+			WHERE l.NrLokalu = ".$id.";"
+		))) {
+		  print("<p>Could not execute query!</p>");
+		  die(mysqli_error($database));
+		}
+		echo json_encode($result->fetch_array(MYSQLI_ASSOC));
+	  }
     mysqli_close($database);
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
